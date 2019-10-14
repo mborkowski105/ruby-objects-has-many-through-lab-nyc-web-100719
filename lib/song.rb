@@ -8,4 +8,8 @@ class Song
     @artist = artist 
     @genre = genre 
   end
+  
+  def self.all 
+    return @@all 
+  end
 end
