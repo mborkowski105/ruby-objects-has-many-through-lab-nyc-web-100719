@@ -20,4 +20,12 @@ class Patient
       app.patient == self
     end
   end
+  
+  def doctors 
+    my_appointments = appointments
+    
+    my_appointments.map do |app|
+      app.doctor
+    end
+  end
 end
