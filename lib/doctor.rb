@@ -13,6 +13,12 @@ class Doctor
   end
   
   def new_appointment(date, patient)
-    return Appointment.new()
+    return Appointment.new(date, patient, self)
+  end
+  
+  def appointments
+    return Appointment.all.select do |app|
+      app.doctor == self
+    end
   end
 end
