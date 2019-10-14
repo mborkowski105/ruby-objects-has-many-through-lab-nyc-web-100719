@@ -10,4 +10,14 @@ class Patient
   def self.all 
     return @@all
   end
+  
+  def new_appointment(date, doctor)
+    return Appointment.new(date, self, doctor)
+  end
+  
+  def appointments
+    return Appointment.all.select do |app|
+      app.patient == self
+    end
+  end
 end
